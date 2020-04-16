@@ -5,7 +5,7 @@
  */
 package admin.Login;
 
-import java.net.URL;
+
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import java.io.IOException;
@@ -74,14 +74,16 @@ public class LoginController implements Initializable {
         if (!userName.getText().equals("") && !passWord.getText().equals("")) {
             if (passWord.getText().equals(rs.getString("password"))) {
                 JOptionPane.showMessageDialog(null, "Login Successful");
-
+                                
                 //Open home page 
-                /* Parent home = FXMLLoader.load(getClass().getResource("Home.fxml"));
-            Scene homeScene = new Scene(home);
-            Stage homeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            homeStage.hide();
-            homeStage.setScene(homeScene);
-            homeStage.show();
+             
+            Parent root = FXMLLoader.load(getClass().getResource("../Dashboard/Dashboard.fxml"));
+            Scene scene = new Scene(root); 
+            Stage dashboard =(Stage) ((Node) event.getSource()).getScene().getWindow();
+            dashboard.hide();
+            dashboard.setTitle("Login");
+            dashboard.setScene(scene);
+            dashboard.show();
             
             
             }else {
@@ -89,9 +91,9 @@ public class LoginController implements Initializable {
             }
         }else{
             JOptionPane.showMessageDialog(null, "Enter Username and Password");
-        }*/
-            }
         }
-    }
+            }
+        
+    
 
 }
