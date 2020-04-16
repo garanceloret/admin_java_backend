@@ -8,6 +8,7 @@ package database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,4 +37,23 @@ public class ConnectionDatabase {
 
         return ConnectionDatabase.connection;
     }
+
+    public static Connection closeDbConnection() {
+
+        if (ConnectionDatabase.connection != null) {
+            try {
+
+                ConnectionDatabase.connection.close();
+                System.out.println("Connection closed.");
+                JOptionPane.showMessageDialog(null, "Connection closed !");
+
+            } catch (SQLException echec){
+
+                echec.printStackTrace();
+            }
+
+        }
+        return ConnectionDatabase.connection = null;
+    }
+
 }

@@ -5,7 +5,6 @@
  */
 package admin.Login;
 
-
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import java.io.IOException;
@@ -59,8 +58,6 @@ public class LoginController implements Initializable {
     public void loginButton(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
 
         //Connection base de données:
-        ConnectionDatabase connect = new ConnectionDatabase();
-
         String sql = "SELECT username, password FROM administrateur WHERE username = '" + userName.getText() + "'";
         System.out.println(sql);
 
@@ -74,26 +71,22 @@ public class LoginController implements Initializable {
         if (!userName.getText().equals("") && !passWord.getText().equals("")) {
             if (passWord.getText().equals(rs.getString("password"))) {
                 JOptionPane.showMessageDialog(null, "Login Successful");
-                                
+
                 //Open home page 
-             
-            Parent root = FXMLLoader.load(getClass().getResource("../Dashboard/Dashboard.fxml"));
-            Scene scene = new Scene(root); 
-            Stage dashboard =(Stage) ((Node) event.getSource()).getScene().getWindow();
-            dashboard.hide();
-            dashboard.setTitle("Login");
-            dashboard.setScene(scene);
-            dashboard.show();
-            
-            
-            }else {
+                Parent root = FXMLLoader.load(getClass().getResource("../Dashboard/Dashboard.fxml"));
+                Scene scene = new Scene(root);
+                Stage dashboard = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                dashboard.hide();
+                dashboard.setTitle("Login");
+                dashboard.setScene(scene);
+                dashboard.show();
+
+            } else {
                 JOptionPane.showMessageDialog(null, "Incorrect password or username");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Enter Username and Password");
         }
-            }
-        
-    
+    }
 
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="600.0" style="-fx-background-color: #113A3A;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="admin.Login.LoginController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="600.0" style="-fx-background-color: #113A3A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Login.LoginController">
      <children>
       <Label layoutX="140.0" layoutY="14.0" text="Login" textFill="WHITE">
          <font>
@@ -15,13 +15,7 @@
       </Label>
       <Label layoutX="65.0" layoutY="114.0" text="Username : " textFill="WHITE" />
       <Label layoutX="65.0" layoutY="191.0" text="Password : " textFill="WHITE" />
-      <Pane layoutX="338.0" prefHeight="354.0" prefWidth="263.0" style="-fx-background-color: #070707;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="338.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label layoutX="63.0" layoutY="146.0" text="New User?" textFill="#eaeaea">
-               </Label>
-            <Button contentDisplay="CENTER" layoutX="135.0" layoutY="141.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="82.0" style="-fx-background-radius: 40;" text="SignUp" />
-         </children>
-      </Pane>
+      <Pane layoutX="338.0" prefHeight="354.0" prefWidth="263.0" style="-fx-background-color: #070707;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="338.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
       <TextField fx:id="userName" layoutX="140.0" layoutY="110.0" />
       <Button contentDisplay="CENTER" layoutX="132.0" layoutY="275.0" mnemonicParsing="false" onAction="#loginButton" prefHeight="26.0" prefWidth="82.0" style="-fx-background-radius: 40; -fx-background-color: #12B300;" text="Login" textFill="WHITE">
          </Button>
