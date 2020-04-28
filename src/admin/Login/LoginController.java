@@ -66,7 +66,7 @@ public class LoginController implements Initializable {
         ResultSet rs = pstmt.executeQuery();
         rs.next();
 
-        System.out.println(rs);
+       // System.out.println(rs);
 
         if (!userName.getText().equals("") && !passWord.getText().equals("")) {
             if (passWord.getText().equals(rs.getString("password"))) {

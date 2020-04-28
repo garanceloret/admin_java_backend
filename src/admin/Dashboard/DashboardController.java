@@ -5,12 +5,18 @@
  */
 package admin.Dashboard;
 
+import admin.Dashboard.filiere.ListFiliere;
+import admin.Dashboard.filiere.Filiere;
+
 import database.ConnectionDatabase;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +24,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +35,7 @@ import javafx.stage.Stage;
  */
 public class DashboardController implements Initializable {
 
+    
     /**
      * Initializes the controller class.
      *
@@ -35,30 +44,27 @@ public class DashboardController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
 
+    } 
     @FXML
-    public void closeButton(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
-
-        Connection connection = ConnectionDatabase.closeDbConnection();
-                Stage dashboard = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                dashboard.hide();
-                
+    public void getListFiliere(ActionEvent event)throws ClassNotFoundException, SQLException, IOException{
+    //Open Filiere page 
+                Parent root = FXMLLoader.load(getClass().getResource("./filiere/listFiliere.fxml"));
+                Scene scene = new Scene(root);
+                Stage filieres = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                filieres.setTitle("Filières");
+                filieres.setScene(scene);
+                filieres.show();
     }
     
     @FXML
-    public void logoutButton(ActionEvent event) throws ClassNotFoundException, SQLException, IOException {
-
-        Connection connection = ConnectionDatabase.closeDbConnection();
-                
-                Parent root = FXMLLoader.load(getClass().getResource("../Login/Login.fxml"));
+    public void getListFormation(ActionEvent event)throws ClassNotFoundException, SQLException, IOException{
+    //Open Formation page 
+                Parent root = FXMLLoader.load(getClass().getResource("./formation/Formation.fxml"));
                 Scene scene = new Scene(root);
-                Stage dash = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                dash.hide();
-                dash.setTitle("Login");
-                dash.setScene(scene);
-                dash.show();
-                
+                Stage formations = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                formations.setTitle("Formations");
+                formations.setScene(scene);
+                formations.show();
     }
 }

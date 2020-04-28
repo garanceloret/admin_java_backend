@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="846.0" prefWidth="1160.0" style="-fx-background-color: #11505A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.Dashboard.formation.FormationController">
+   <children>
+       <fx:include fx:id="logoutButton" layoutX="10.0" layoutY="30.0" source="../../../Utilities/buttons/logout.fxml" />
+       <fx:include fx:id="closeButton"  layoutX="140.0" layoutY="30.0"  source="../../../Utilities/buttons/close.fxml" />
+    </children>
+    
+    
+    <children>
+      <Label layoutX="552.0" layoutY="35.0" prefHeight="16.0" prefWidth="87.0" text="Formations" textFill="WHITE" />
+      <TableView fx:id="tableView" layoutX="316.0" layoutY="223.0" prefHeight="390.0" prefWidth="580.0">
+        <columns>
+          <TableColumn fx:id="c1" prefWidth="248.0" text="Label" />
+          <TableColumn fx:id="c2" prefWidth="189.0" text="prof.Référent" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

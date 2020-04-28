@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+
+
+<Button fx:id="logoutButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logoutButton" prefHeight="34.0" prefWidth="119.0" style="-fx-background-radius: 40; -fx-background-color: #12B300;" text="Logout" textFill="WHITE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Utilities.buttons.LogoutController" />
